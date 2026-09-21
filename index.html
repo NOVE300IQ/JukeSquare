@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Enjoy Music</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+        <link rel="preconnect" href="https://googleapis.com">
+        <link rel="preconnect" href="https://gstatic.com" crossorigin>
+        <link href="https://googleapis.com/css2?family=Mea+Culpa&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+        <link href="https://googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+        <link href="https://googleapis.com" rel="stylesheet">
+    </head>
+    <body>
+        <div class="header-text">
+            <h1><span id="someanimations"></span><span class="cursor"></span></h1>
+        </div>
+        
+       <div class="box">
+        <div class="search">
+        <div class="controls-container">
+            <div class="search-bar">
+                <input type="search" id="search-input" placeholder="Search Your Favourite">
+            </div>
+            
+            <div class="upload-box">
+                <label for="file-input" class="upload-btn">Open Audio Files</label>
+                <input type="file" id="file-input" accept=".mp3, .wav" multiple hidden>
+            </div>
+        </div>
+
+        <div class="songs-list" id="songs-list">
+            <p style="color: rgba(255,255,255,0.5);">No music loaded yet. Click Open Audio Files to start.</p>
+        </div>
+        </div>
+        <div class="playing-card">
+        <div class="player">
+         <div class="player-content">
+           <div class="song-details">
+                <span class="music-icon"><img src="images/pngwing.com.png"></span>
+            <p id="now-playing">Select a song to play</p>
+            </div>
+                <audio class="ad-player" id="audio-player" controls></audio>
+            </div>
+            </div>
+        </div>
+        </div>
+        <script src="script.js"></script>
+    </body>
+</html>

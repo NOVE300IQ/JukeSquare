@@ -1,0 +1,291 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url(images/jukesquare.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    padding-bottom: 140px;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+.header-text h1 {
+  font-family: 'Mea Culpa', cursive;
+  display: flex;
+  align-items: center;
+  width: max-content;
+  color: #9cff98;
+}
+
+.controls-container {
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    align-items: center;
+}
+
+input[type="search"] {
+    width: 100%;
+    min-width: 250px;
+    max-width: 300px;
+    padding: 10px 16px;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    background-color: rgba(255, 255, 255, 0.15);
+    color: #9cff98;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    outline: none;
+}
+
+input[type="search"]::placeholder {
+    color: rgba(103, 255, 166, 0.7);
+    opacity: 1;
+}
+
+input[type="search"]:focus {
+    background-color: rgba(255, 255, 255, 0.25);
+    border-color: #ffffff;
+}
+
+.upload-btn {
+    padding: 10px 16px;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    background-color: rgba(255, 255, 255, 0.15);
+    color: #9cff98;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background 0.2s;
+    display: inline-block;
+}
+
+.upload-btn:hover {
+    background-color: rgba(255, 255, 255, 0.35);
+}
+
+.songs-list {
+    padding: 0 20px;
+    max-width: 500px;
+    max-height: calc(100vh - 240px);
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.song-item {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 12px 16px;
+    border-radius: 12px;
+    color: white;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background 0.2s;
+    scroll-behavior: smooth;
+    scrollbar-width: thin;
+    scrollbar-color: #7bff77 rgba(255, 255, 255, 0.05);
+}
+
+.songs-list::-webkit-scrollbar {
+    width: 8px;
+}
+
+.songs-list::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+}
+
+.songs-list::-webkit-scrollbar-thumb {
+    background: #7bff77;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #7bff77;
+}
+
+.songs-list::-webkit-scrollbar-thumb:hover {
+    background: #5cdb59;
+}
+
+.song-item {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 12px 16px;
+    border-radius: 12px;
+    color: white;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background 0.2s;
+}
+
+/* Used some googling for making this scrollbar 🫨*/
+
+.song-item:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.song-item .music-icon-element {
+    transition: transform 0.2s ease-in-out;
+    display: inline-block;
+}
+
+.song-item:hover .music-icon-element {
+    transform: scale(1.25);
+}
+.song-item:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.player {
+    position: relative;
+    transform: translateX(-50%);
+    width: calc(100% - 40px);
+    max-width: 600px;
+    background: rgba(255, 255, 255, 0.06);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 24px;
+    padding: 16px 24px;
+    z-index: 1000;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    margin-left: 400px;
+    padding-bottom: 120px;
+}
+
+.player-content {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+}
+
+.song-details {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+@keyframes pulse {
+    0%, 100% { transform: scale(1); opacity: 0.8; }
+    50% { transform: scale(1.2); opacity: 1; }
+}
+
+
+.music-icon {
+    font-size: 16px;
+    animation: pulse 2s infinite ease-in-out;
+}
+
+#now-playing {
+    color: white;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
+}
+
+#audio-player {
+    width: 100%;
+    height: 36px;
+    outline: none;
+}
+
+audio::-webkit-media-controls-enclosure {
+    border-radius: 12px;
+    padding: 5px;
+}
+
+audio::-webkit-media-controls-panel {
+    background-color: transparent;
+}
+
+audio::-webkit-media-controls-play-button,
+audio::-webkit-media-controls-mute-button {
+    background-color: #7bff77;
+    border-radius: 50%;
+    transform: scale(1.1);
+    padding: 12px;
+}
+
+audio::-webkit-media-controls-current-time-display,
+audio::-webkit-media-controls-time-remaining-display {
+    color: #000000;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    padding: 12px;
+}
+
+audio::-webkit-media-controls-timeline {
+    border-radius: 4px;
+    margin-left: 10px;
+    margin-right: 10px;
+    padding: 12px;
+}
+
+.header-text {
+    margin: 20px;
+}
+
+#someanimations {
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 0;
+  vertical-align: bottom;
+}
+
+
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@keyframes erasing {
+  from { width: 100%; }
+  to { width: 0; }
+}
+
+@keyframes blink {
+  from, to { opacity: 0; }
+  50% { opacity: 1; }
+}
+
+#someanimations.typing {
+  animation: typing 1.5s forwards;
+}
+
+#someanimations.erasing {
+  animation: erasing 1s forwards;
+}
+
+.cursor::after {
+  content: "|";
+  animation: blink 0.75s step-end infinite;
+  color: #ffffff;
+  margin-left: 2px;
+}
+
+.music-icon:hover {
+    transform: scale(5);
+    cursor: pointer;
+}
+
+.box {
+    display: flex;
+}
