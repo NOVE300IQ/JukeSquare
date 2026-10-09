@@ -75,13 +75,12 @@ searchInput.addEventListener('input', (e) => {
 
 audioPlayer.addEventListener('ended', () => {
     if (loadedSongs.length > 0) {
-        let nextIndex = currentPlayingIndex + 1; // Increment current song number by one
-        
+        let nextIndex = currentPlayingIndex + 1; 
         if (nextIndex >= loadedSongs.length) {
-            nextIndex = 0; // Loop back to the very first song if it was the last track in the list
+            nextIndex = 0;
         }
         
-        playSong(nextIndex); // Push the next calculated index value into the engine
+        playSong(nextIndex);
     }
 });
 

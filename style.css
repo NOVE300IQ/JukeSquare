@@ -130,7 +130,7 @@ input[type="search"]:focus {
     transition: background 0.2s;
 }
 
-/* Used some googling for making this scrollbar 🫨*/
+/* Used some googling/generative ai in google's search for making this scrollbar 🫨*/
 
 .song-item:hover {
     background: rgba(255, 255, 255, 0.2);
